@@ -1,0 +1,12 @@
+---
+- name: playbook to create azure rg
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: create rg
+      azure_rm_resourcegroup:
+        - name: ansible-play-test-rg
+          location: eastus
+      register: rg
+    - debug: 
+        var: rg
