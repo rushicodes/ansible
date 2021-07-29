@@ -1,0 +1,15 @@
+- name: check jboss on servers
+  #hosts: AO_Log_Archival_LBC - yes
+  #hosts: Pablo_Failed_File_Monitoring - yes
+  #hosts: LOBC_TST
+  #hosts: LOBC_PROD
+  #10.127.10.7
+  become: yes
+  become_user: root
+
+  tasks:
+    - name: ps -ef | grep jboss
+      shell: ps -ef | grep jboss | grep -v grep 
+      register: jboss_status
+    - debug:
+        var: jboss_status.stdout
