@@ -1,0 +1,3 @@
+---
+http_port: "80"
+mysql_root_password: "Tokyo@12345"
